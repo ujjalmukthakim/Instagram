@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'api',
     'users',
     'groups',
-    'core',
+  
 ]
 
 MIDDLEWARE = [
@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     "default": dj_database_url.config(
-        default="postgresql://instagram_hbkn_user:lFnvyzVeCqtzRaRZRDpEeRMsAqfgjKgk@dpg-d58t4vf5r7bs738tuhn0-a.oregon-postgres.render.com:5432/instagram_hbkn"
+        default=os.environ.get("DATABASE_URL")
     )
 }
 
@@ -157,5 +157,5 @@ SIMPLE_JWT = {
 INSTALLED_APPS += ["corsheaders"]
 MIDDLEWARE = ["corsheaders.middleware.CorsMiddleware"] + MIDDLEWARE
 CORS_ALLOWED_ORIGINS = [
-    "https://your-frontend.vercel.app",
+    "https://instagram-f-zm75.vercel.app/",
 ]
