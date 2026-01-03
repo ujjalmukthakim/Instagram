@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2cr+q#55uv-tzt9cj9*kcj07@0%2u703deu)c#p6%ch57$-fdr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -142,6 +142,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -154,8 +155,8 @@ SIMPLE_JWT = {
 }
 
 # For CORS (React frontend)
-INSTALLED_APPS += ["corsheaders"]
-MIDDLEWARE = ["corsheaders.middleware.CorsMiddleware"] + MIDDLEWARE
+
+
 CORS_ALLOWED_ORIGINS = [
     "https://instagram-f-zm75.vercel.app/",
 ]
