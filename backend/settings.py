@@ -166,8 +166,8 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),  # change 15 as you want
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),     # change 7 as you want
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1000),  # change 15 as you want
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),     # change 7 as you want
 }
 
 # For CORS (React frontend)
