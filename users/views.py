@@ -32,5 +32,14 @@ class MeView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        serializer = UserSerializer(request.user)
-        return Response(serializer.data)
+        user = request.user
+        return Response({
+            "id": user.id,
+            "username": user.username,
+            "role": user.role,
+            "permissions": {
+                "can_book": user.permissions.get("can_book", False),
+                "can_approve": user.permissions.get("can_approve", False),
+                "can_manage_groups": user.permissions.get("can_manage_groups", False),
+            }
+        })
