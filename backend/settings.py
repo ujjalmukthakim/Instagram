@@ -170,5 +170,5 @@ SIMPLE_JWT = {
 
 
 CORS_ALLOWED_ORIGINS = [
-    "https://instagram-f-zm75.vercel.app",
+    "https://instagram-f.vercel.app",
 ]
