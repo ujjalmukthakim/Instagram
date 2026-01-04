@@ -16,7 +16,7 @@ urlpatterns += [
     path('book-post/', PostBookingView.as_view()),
     path('book-weekly-post/', WeeklyPostBooking.as_view()),
     path('admin-weekly-posts/', AdminWeeklyPosts.as_view()),
-path('approve-weekly-post/', ApproveWeeklyPost.as_view()),
+    path('approve-weekly-post/', ApproveWeeklyPost.as_view()),
 
 
 
