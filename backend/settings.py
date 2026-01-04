@@ -31,8 +31,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # DEBUG = True
 DEBUG = os.environ.get("DEBUG") == "True"
 
-
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "instagram-e6ln.onrender.com",
+]
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -172,3 +173,9 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     "https://instagram-f.vercel.app",
 ]
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_SSL_REDIRECT = True
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
