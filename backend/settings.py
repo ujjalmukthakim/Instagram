@@ -33,7 +33,10 @@ DEBUG = os.environ.get("DEBUG") == "True"
 
 ALLOWED_HOSTS = [
     "instagram-e6ln.onrender.com",
+    "localhost",
+    "127.0.0.1",
 ]
+
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -174,8 +177,16 @@ CORS_ALLOWED_ORIGINS = [
     "https://instagram-f.vercel.app",
 ]
 
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# ---- SECURITY FIX FOR RENDER ----
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 SECURE_SSL_REDIRECT = True
 
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
+
