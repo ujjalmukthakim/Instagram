@@ -37,6 +37,7 @@ class MeView(APIView):
             "id": user.id,
             "username": user.username,
             "role": user.role,
+             "status": "Approved",
             "permissions": {
                 "can_book": user.permissions.get("can_book", False),
                 "can_approve": user.permissions.get("can_approve", False),
