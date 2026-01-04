@@ -25,6 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
+# SECRET_KEY = 'django-insecure-2cr+q#55uv-tzt9cj9*kcj07@0%2u703deu)c#p6%ch57$-fdr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
@@ -102,7 +103,7 @@ DATABASES = {
     "default": dj_database_url.parse(
         DATABASE_URL,
         conn_max_age=600,
-        # ssl_require=True
+        ssl_require=True
     ) if DATABASE_URL else {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
