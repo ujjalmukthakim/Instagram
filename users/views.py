@@ -39,7 +39,8 @@ class MeView(APIView):
             "role": user.role,
              "status": "Approved",
             "permissions": {
-                "can_book": user.permissions.get("can_book", False),
+                # Change this:
+                "can_book": user.permissions.get("can_book", False) if user.permissions else False,
                 "can_approve": user.permissions.get("can_approve", False),
                 "can_manage_groups": user.permissions.get("can_manage_groups", False),
             }
